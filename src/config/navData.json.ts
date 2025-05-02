@@ -18,34 +18,32 @@ const navConfig: navItem[] = [
 		link: "/",
 	},
 	{
-		text: "portfolios",
-		link: "/portfolio",
+		text: "Performances",
+		link: "/performances",
 	},
 	{
-		text: "Pricing",
-		link: "/#pricing",
-	},
-	{
-		text: "Pages",
+		text: "Music",
 		dropdown: [
 			{
-				text: "Portfolio",
-				link: "/portfolio/couple-1",
+				text: "Originals",
+				link: "/original-music/",
 			},
 			{
-				text: "Legal",
-				link: "/privacy-policy/",
+				text: "Traditional Tunes",
+				link: "/traditional-tunes/",
 			},
-			{
-				text: "Elements",
-				link: "/elements/",
-			},
-			{
-				text: "404",
-				link: "/not-a-link/",
-			},
+
 		],
 	},
+	{
+		text: "Artwork",
+		link: "/artwork",
+	},
+
+	// {
+	// 	text: "Pricing",
+	// 	link: "/#pricing",
+	// },
 ];
 
 export default navConfig;

@@ -6,7 +6,7 @@ export interface SiteDataProps {
 	author: {
 		name: string;
 		email: string;
-		twitter: string; // used for twitter cards when sharing a blog post on twitter
+		instagram: string; // used for twitter cards when sharing a blog post on twitter
 	};
 	defaultImage: {
 		src: string;
@@ -16,17 +16,17 @@ export interface SiteDataProps {
 
 // Update this file with your site specific information
 const siteData: SiteDataProps = {
-	name: "Horizon Photography",
+	name: "Peter Irving Music",
 	// Your website's title and description (meta fields)
-	title: "Horizon - a beautiful photography website template made with Astro and Tailwind CSS",
+	title: "Peter Irving - Songwriting and Performance",
 	description:
-		"Get your next website up and running quickly with our beautiful website theme designed using Astro and Tailwind CSS. Perfect for freelancers, developers, startups, and personal use.",
+		"Explore the soulful world of Peter Irving, featuring old-time music, country blues, and ragtime performances. Discover his unique songwriting and captivating live shows.",
 	useViewTransitions: true,
 	// Your information!
 	author: {
-		name: "Cosmic Themes",
-		email: "creator@cosmicthemes.com",
-		twitter: "Cosmic_Themes",
+		name: "Peter irving",
+		email: "irving.peter92@gmail.com",
+		instagram: "peterirving.live"
 	},
 
 	// default image for meta tags if the page doesn't have an image already

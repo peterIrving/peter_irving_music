@@ -1,0 +1,20 @@
+---
+import { getAllPerformances, getUpcomingPerformances } from "../data/PerformanceUtils";
+import PerformanceCard from "./PerformanceCard.astro";
+// import EventCard from '..astro';
+
+const { category } = Astro.props;
+const performances = getUpcomingPerformances();
+---
+
+<div class="performance-container">
+	<ul class="performance-list">
+		{
+			performances.map((performance) => (
+				<li>
+					<PerformanceCard performance={performance} />
+				</li>
+			))
+		}
+	</ul>
+</div>

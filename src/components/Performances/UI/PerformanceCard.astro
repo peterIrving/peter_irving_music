@@ -1,0 +1,59 @@
+---
+import type { Performance } from "../data/Performance";
+
+export interface Props {
+	performance: Performance;
+}
+
+const { title, startTime, endTime, location, description } = Astro.props.performance;
+
+const monthDayYearString = () => {
+	const options: Intl.DateTimeFormatOptions = {
+		year: "numeric",
+		month: "2-digit",
+		day: "2-digit",
+	};
+	return new Intl.DateTimeFormat("en-US", options).format(startTime);
+};
+
+const startToEndTimeString = () => {
+	const options: Intl.DateTimeFormatOptions = {
+		hour: "2-digit",
+		minute: "2-digit",
+	};
+	return (
+		new Intl.DateTimeFormat("en-US", options).format(startTime) +
+		" - " +
+		new Intl.DateTimeFormat("en-US", options).format(endTime)
+	);
+};
+---
+
+<div class="performance-card">
+	<h2 class="performance-title">{title}</h2>
+	<p class="performance-date">{monthDayYearString}</p>
+	<p class="performance-date">{startToEndTimeString}</p>
+	<p class="performance-location">{location}</p>
+	<p class="performance-description">{description}</p>
+</div>
+
+<style>
+	.performance-card {
+		border: 1px solid #ccc;
+		border-radius: 8px;
+		padding: 16px;
+		margin: 16px 0;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
+
+	.performance-title {
+		font-size: 1.5rem;
+		margin-bottom: 8px;
+	}
+
+	.performance-date,
+	.performance-location,
+	.performance-description {
+		margin: 4px 0;
+	}
+</style>

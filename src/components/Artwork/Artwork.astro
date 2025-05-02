@@ -1,0 +1,28 @@
+---
+/**
+ * * This is a Postcards section that displays three Postcards
+ *
+ */
+
+import { getCollection } from "astro:content";
+
+// components
+import PostcardCard from "@components/Artwork/PostcardCard.astro";
+import Button from "@components/Button/Button.astro";
+import { artworks } from "./data/ArtworkData";
+
+// const postcards = await getCollection("Postcards");
+
+const firstThreePostcards = artworks.slice(0, 3);
+---
+
+<section id="Postcard" class="site-container scroll-mt-10 py-8 md:py-12">
+	<div class="mx-auto max-w-6xl text-center">
+		<h2 class="h2 text-pretty uppercase">Paintings and Such</h2>
+	</div>
+	<div class="mx-auto grid max-w-md gap-20 pt-8 md:pt-12 lg:max-w-none lg:grid-cols-3">
+		<PostcardCard Postcard={firstThreePostcards[0]} imagePosition="top" />
+		<PostcardCard Postcard={firstThreePostcards[1]} imagePosition="bottom" />
+		<PostcardCard Postcard={firstThreePostcards[2]} imagePosition="top" />
+	</div>
+</section>
