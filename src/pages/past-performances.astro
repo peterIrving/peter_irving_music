@@ -5,11 +5,11 @@ import PerformanceList from "@components/Performances/UI/PerformanceList.astro";
 import { PerformanceTimeframe } from "@components/Performances/UI/PerformanceTimeframe";
 ---
 
-<BaseLayout title="Performances" description="Upcoming and past performances">
+<BaseLayout title="Past Performances" description="Upcoming and past performances">
 	<div
 		class="mx-auto max-w-7xl px-4 py-8 pt-24 sm:px-6 md:px-8 md:py-18 md:pt-28 lg:px-12 lg:py-18 lg:pt-32"
 	>
-		<h1 class="font-heading-1 mb-8 text-center text-4xl">Performances</h1>
-		<PerformanceList timeframe={PerformanceTimeframe.Upcoming} />
+		<h1 class="font-heading-1 mb-8 text-center text-4xl">Past Performances</h1>
+		<PerformanceList timeframe={PerformanceTimeframe.Past} />
 	</div>
 </BaseLayout>

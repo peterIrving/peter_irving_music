@@ -1,16 +1,28 @@
 ---
-import { getAllPerformances, getUpcomingPerformances } from "../data/PerformanceUtils";
+import { getPastPerformances, getUpcomingPerformances } from "../data/PerformanceUtils";
 import PerformanceCard from "./PerformanceCard.astro";
+import { PerformanceTimeframe } from "./PerformanceTimeframe";
 // import EventCard from '..astro';
+interface Props {
+	timeframe: PerformanceTimeframe;
+}
 
-const { category } = Astro.props;
-const performances = getUpcomingPerformances();
+const { timeframe } = Astro.props;
+
+const performances = () => {
+	switch (timeframe) {
+		case PerformanceTimeframe.Past:
+			return getPastPerformances();
+		case PerformanceTimeframe.Upcoming:
+			return getUpcomingPerformances();
+	}
+};
 ---
 
 <div class="performance-container">
-	<ul class="performance-list">
+	<ul class="performance-list space-y-6 sm:px-4 md:px-10 lg:px-42">
 		{
-			performances.map((performance) => (
+			performances().map((performance) => (
 				<li>
 					<PerformanceCard performance={performance} />
 				</li>

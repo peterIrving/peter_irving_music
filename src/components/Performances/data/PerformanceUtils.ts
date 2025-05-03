@@ -18,3 +18,10 @@ export function getUpcomingPerformances(): Performance[] {
         .filter(Performance => Performance.startTime >= today)
         .sort((a, b) => a.startTime.getTime() - b.startTime.getTime());
 }
+
+export function getPastPerformances(): Performance[] {
+    const today = new Date();
+    return performanceData
+        .filter(Performance => Performance.startTime < today)
+        .sort((a, b) => b.startTime.getTime() - a.startTime.getTime());
+}

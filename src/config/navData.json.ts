@@ -19,7 +19,17 @@ const navConfig: navItem[] = [
 	},
 	{
 		text: "Performances",
-		link: "/performances",
+		dropdown: [
+			{
+				text: "Upcoming",
+				link: "/performances",
+			},
+			{
+				text: "Past",
+				link: "/past-performances",
+			},
+
+		],
 	},
 	{
 		text: "Music",
