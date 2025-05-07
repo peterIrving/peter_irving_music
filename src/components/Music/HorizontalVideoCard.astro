@@ -1,0 +1,36 @@
+---
+interface Props {
+	video: {
+		videoURL: string;
+		name: string;
+		description: string;
+	};
+}
+
+const { video } = Astro.props;
+---
+
+<div
+	class="border-primary-200 flex w-full flex-col overflow-hidden rounded-lg border-2 sm:flex-row"
+>
+	<div class="w-full sm:w-3/5">
+		<div class="relative w-full">
+			<div style="padding-top: 56.25%" class="relative w-full">
+				<div class="absolute inset-0 touch-none">
+					<iframe
+						src={`${video.videoURL}?playsinline=1&rel=0&modestbranding=1`}
+						class="h-full w-full"
+						title="YouTube video player"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						referrerpolicy="strict-origin-when-cross-origin"
+						allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="flex flex-col justify-center p-8 sm:w-2/5">
+		<h3 class="h2 mb-4">{video.name}</h3>
+		<p class="text-lg">{video.description}</p>
+	</div>
+</div>
