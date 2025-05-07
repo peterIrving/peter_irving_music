@@ -1,0 +1,22 @@
+---
+import { getVideosForVideoType } from "./data/MusicVideoUtils";
+import { VideoType } from "./data/VideoData";
+import Button from "@components/Button/Button.astro";
+import VerticalVideoCard from "./VerticalVideoCard.astro";
+---
+
+<section id="pricing" class="mx-auto max-w-6xl scroll-mt-10 px-4 py-8 md:py-12">
+	<div
+		class="mx-auto grid w-full max-w-md gap-12 pt-8 sm:max-w-none sm:grid-cols-2 md:pt-12 lg:grid-cols-3"
+	>
+		{
+			getVideosForVideoType(VideoType.Traditional).map((video) => (
+				<VerticalVideoCard video={video} />
+			))
+		}
+	</div>
+
+	<div class="mt-12 flex justify-center">
+		<Button href="/#contact" variant="outline" class="px-8">Get a quote</Button>
+	</div>
+</section>
