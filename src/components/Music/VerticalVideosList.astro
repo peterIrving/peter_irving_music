@@ -1,0 +1,51 @@
+---
+/**
+ * * Pricing cards with three cards
+ */
+
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+// components
+import Button from "@components/Button/Button.astro";
+import { getVideosForVideoType } from "./data/MusicVideoUtils";
+import { VideoType } from "./data/VideoData";
+---
+
+<section id="pricing" class="mx-auto max-w-6xl scroll-mt-10 px-4 py-8 md:py-12">
+	<!-- works for 3 pricing plans, adjust grid cols here to support more or less -->
+	<div
+		class="mx-auto grid w-full max-w-md gap-12 pt-8 sm:max-w-none sm:grid-cols-2 md:pt-12 lg:grid-cols-3"
+	>
+		{
+			getVideosForVideoType(VideoType.Traditional).map((video, index) => (
+				<div class="flex w-full flex-col">
+					<div>
+						<div class="aspect-[3/4] h-auto w-full overflow-hidden rounded-t-lg">
+							<iframe
+								src={video.videoURL}
+								class="aspect-[9/16] h-full w-full object-cover"
+								title="YouTube video player"
+								frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+								referrerpolicy="strict-origin-when-cross-origin"
+								allowfullscreen
+							/>
+						</div>
+					</div>
+					<div class="border-primary-200 flex h-full flex-col justify-between rounded-b-lg border-2 border-t-0 pt-10 pb-10">
+						<div>
+							<h3 class="h2 text-center">{video.name}</h3>
+
+							<p class="mt-3 px-8 text-center text-lg">{video.description}</p>
+						</div>
+					</div>
+				</div>
+			))
+		}
+	</div>
+
+	<div class="mt-12 flex justify-center">
+		<Button href="/#contact" variant="outline" class="px-8">Get a quote</Button>
+	</div>
+</section>
