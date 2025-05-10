@@ -16,13 +16,18 @@ import Button from "@components/Button/Button.astro";
 
 // data
 import siteData from "@config/siteData.json";
+import Performances from "./performances.astro";
+import PerformanceList from "@components/Performances/UI/PerformanceList.astro";
+import { PerformanceTimeframe } from "@components/Performances/data/PerformanceTimeframe";
+import PerformanceListHome from "@components/Performances/UI/PerformanceListHome.astro";
 ---
 
 <BaseLayout title={siteData.title} description={siteData.description} navStartStyle="white">
 	<Hero />
-	<FeatureNumbers />
-	<PortfolioThreeCards />
-	<PricingThreeCards />
+	<!-- <FeatureNumbers /> -->
+	<!-- <PortfolioThreeCards />
+	<PricingThreeCards /> -->
 	<About />
+	<PerformanceListHome />
 	<Contact />
 </BaseLayout>

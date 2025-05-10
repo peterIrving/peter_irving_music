@@ -1,0 +1,15 @@
+---
+import PerformanceList from "./PerformanceList.astro";
+import { PerformanceTimeframe } from "@components/Performances/data/PerformanceTimeframe";
+import Button from "@components/Button/Button.astro";
+---
+
+<div class="performance-list-home-container px-8 xl:px-32">
+	<div class="mx-auto max-w-6xl pt-16 pb-8 text-center">
+		<h2 class="h2 text-pretty uppercase">Upcoming Performances</h2>
+	</div>
+	<PerformanceList timeframe={PerformanceTimeframe.Upcoming} limit={4} />
+	<div class="mt-8 flex justify-center p-8">
+		<Button href="/performances" variant="outline" class="px-8">View All Performances</Button>
+	</div>
+</div>
