@@ -12,6 +12,7 @@ import About from "@components/About/About.astro";
 import siteData from "@config/siteData.json";
 import PerformanceListHome from "@components/Performances/UI/PerformanceListHome.astro";
 import ContactComponent from "@components/Contact/ContactComponent.astro";
+import EmailListSignup from "@components/Contact/EmailListSignup.astro";
 ---
 
 <BaseLayout title={siteData.title} description={siteData.description} navStartStyle="white">
@@ -21,5 +22,6 @@ import ContactComponent from "@components/Contact/ContactComponent.astro";
 	<PricingThreeCards /> -->
 	<About />
 	<PerformanceListHome />
+	<EmailListSignup />
 	<ContactComponent />
 </BaseLayout>
