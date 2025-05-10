@@ -6,20 +6,12 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 
 // components
 import Hero from "@components/Hero/Hero.astro";
-import FeatureNumbers from "@components/Feature/FeatureNumbers.astro";
-import PortfolioThreeCards from "@components/Portfolio/PortfolioThreeCards.astro";
-import Testimonials from "@components/Testimonials/Testimonials.astro";
-import PricingThreeCards from "@components/Pricing/PricingThreeCards.astro";
 import About from "@components/About/About.astro";
-import Contact from "@components/Contact/Contact.astro";
-import Button from "@components/Button/Button.astro";
 
 // data
 import siteData from "@config/siteData.json";
-import Performances from "./performances.astro";
-import PerformanceList from "@components/Performances/UI/PerformanceList.astro";
-import { PerformanceTimeframe } from "@components/Performances/data/PerformanceTimeframe";
 import PerformanceListHome from "@components/Performances/UI/PerformanceListHome.astro";
+import ContactComponent from "@components/Contact/ContactComponent.astro";
 ---
 
 <BaseLayout title={siteData.title} description={siteData.description} navStartStyle="white">
@@ -29,5 +21,5 @@ import PerformanceListHome from "@components/Performances/UI/PerformanceListHome
 	<PricingThreeCards /> -->
 	<About />
 	<PerformanceListHome />
-	<Contact />
+	<ContactComponent />
 </BaseLayout>

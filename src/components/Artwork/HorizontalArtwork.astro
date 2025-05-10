@@ -1,0 +1,49 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import type { Artwork } from "./data/Artwork";
+
+interface Props {
+	artwork: Artwork;
+	imagePosition?: "left" | "right";
+}
+
+const { artwork, imagePosition = "left" } = Astro.props as Props;
+const { title, image, description } = artwork;
+---
+
+<div class="grid items-center gap-1 lg:grid-cols-2 lg:gap-6">
+	<div
+		class:list={[
+			"aspect-[4/3] overflow-hidden rounded-xl",
+			{
+				"lg:order-2": imagePosition === "right",
+			},
+		]}
+	>
+		<Image
+			src={image}
+			alt={title}
+			class="h-auto min-h-full w-full min-w-full rounded-lg object-cover"
+			width={1000}
+			densities={[1.5, 2]}
+		/>
+	</div>
+	<div
+		class:list={[
+			"flex flex-col",
+			{
+				"lg:pl-6": imagePosition === "left",
+				"lg:pr-6": imagePosition === "right",
+			},
+		]}
+	>
+		<div class="flex flex-col items-center lg:items-start">
+			<Icon name="gridicons/quote" class="text-primary-200 size-14" aria-hidden="true" />
+			<hr class="border-primary-400 mt-4 mb-6 w-1/2 border-1" />
+		</div>
+
+		<h3 class="h3 tracking-widest lg:text-left">{title}</h3>
+		<p class="mt-6 text-pretty lg:text-lg">{description ?? "no description provided"}</p>
+	</div>
+</div>
