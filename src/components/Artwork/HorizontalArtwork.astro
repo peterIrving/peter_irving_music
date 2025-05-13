@@ -12,10 +12,10 @@ const { artwork, imagePosition = "left" } = Astro.props as Props;
 const { title, image, description } = artwork;
 ---
 
-<div class="grid items-center gap-1 lg:grid-cols-2 lg:gap-6">
+<div class="grid w-full items-center gap-1 lg:grid-cols-2 lg:gap-6">
 	<div
 		class:list={[
-			"aspect-[4/3] overflow-hidden rounded-xl",
+			"aspect-[4/3] w-full overflow-hidden rounded-xl",
 			{
 				"lg:order-2": imagePosition === "right",
 			},
