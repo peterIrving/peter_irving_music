@@ -4,9 +4,19 @@ import { Image } from "astro:assets";
 
 export interface Props {
 	performance: Performance;
+	index: number;
 }
 
 const { title, startTime, endTime, location, description, imageURL } = Astro.props.performance;
+const { index } = Astro.props;
+
+// Import images
+import peterBanjoSerious from "../../../assets/images/peter-banjo.jpeg";
+import peterBanjoHappy from "../../../assets/images/peter-headshot.jpeg";
+import peterFiddle from "../../../assets/images/peter-fiddle.jpeg";
+
+// Use a default image
+const defaultImage = peterBanjoHappy.src;
 
 const monthDayYearString = () => {
 	const options: Intl.DateTimeFormatOptions = {
@@ -69,11 +79,24 @@ const generateICalContent = () => {
 
 	return "data:text/calendar;charset=utf8," + encodeURIComponent(icalContent);
 };
+
+// Function to cycle through Peter's images based on index
+const getBackupImage = (index: number) => {
+	const images = [peterBanjoSerious, peterBanjoHappy, peterFiddle];
+	const imageIndex = index % images.length;
+	return images[imageIndex];
+};
 ---
 
 <div class="performance-card border-primary-200 rounded-lg border-2">
 	<div class="card-image">
-		{imageURL && <img src={imageURL} alt={title} class="venue-image" />}
+		{
+			imageURL ? (
+				<img src={imageURL} alt={title} class="venue-image" />
+			) : (
+				<Image src={getBackupImage(index)} alt={title} class="venue-image" />
+			)
+		}
 	</div>
 	<div class="card-content">
 		<h2 class="performance-title">{title}</h2>

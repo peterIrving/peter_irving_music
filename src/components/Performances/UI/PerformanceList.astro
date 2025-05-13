@@ -25,9 +25,9 @@ const performances = () => {
 		{
 			performances()
 				.slice(0, limit ?? performances().length)
-				.map((performance) => (
+				.map((performance, index) => (
 					<li>
-						<PerformanceCard performance={performance} />
+						<PerformanceCard performance={performance} index={index} />
 					</li>
 				))
 		}
