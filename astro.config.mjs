@@ -35,7 +35,9 @@ export default defineConfig({
 					"chevron-down",
 					"category",
 					"calendar-event",
+
 				],
+				gridicons: ["*"],
 			},
 		}),
 		sitemap(),
