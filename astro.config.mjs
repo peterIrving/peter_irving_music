@@ -9,7 +9,8 @@ import AutoImport from "astro-auto-import";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://horizon.cosmicthemes.com",
+	site: "https://www.peterirving.live",
+	base: "/",
 	integrations: [
 		// example auto import component into blog post mdx files
 		AutoImport({
