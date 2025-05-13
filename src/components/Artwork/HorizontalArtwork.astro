@@ -12,7 +12,9 @@ const { artwork, imagePosition = "left" } = Astro.props as Props;
 const { title, image, description } = artwork;
 ---
 
-<div class="grid w-full items-center gap-1 lg:grid-cols-2 lg:gap-6">
+<div
+	class="grid w-full items-center gap-1 rounded-xl border-2 border-green-500 p-4 lg:grid-cols-2 lg:gap-6"
+>
 	<div
 		class:list={[
 			"aspect-[4/3] w-full overflow-hidden rounded-xl",
@@ -34,7 +36,7 @@ const { title, image, description } = artwork;
 			"flex flex-col",
 			{
 				"lg:pl-6": imagePosition === "left",
-				"lg:pr-6": imagePosition === "right",
+				"lg:ml-auto lg:pr-6": imagePosition === "right",
 			},
 		]}
 	>
