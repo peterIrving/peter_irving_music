@@ -10,6 +10,12 @@ interface Props {
 
 const { artwork, imagePosition = "left" } = Astro.props as Props;
 const { title, image, description } = artwork;
+
+// Generate a unique ID for this component instance
+const uniqueId = crypto.randomUUID();
+const containerId = `artwork-container-${uniqueId}`;
+const modalId = `image-modal-${uniqueId}`;
+const closeButtonId = `close-modal-${uniqueId}`;
 ---
 
 <div
@@ -17,11 +23,12 @@ const { title, image, description } = artwork;
 >
 	<div
 		class:list={[
-			"aspect-[4/3] w-full overflow-hidden rounded-xl",
+			"aspect-[4/3] w-full cursor-pointer overflow-hidden rounded-xl",
 			{
 				"lg:order-2": imagePosition === "right",
 			},
 		]}
+		id={containerId}
 	>
 		<Image
 			src={image}
@@ -49,3 +56,62 @@ const { title, image, description } = artwork;
 		<p class="mt-6 text-pretty lg:text-lg">{description ?? "no description provided"}</p>
 	</div>
 </div>
+
+<!-- Modal for full-screen image -->
+<div
+	id={modalId}
+	class="bg-opacity-90 fixed inset-0 z-50 flex hidden items-center justify-center bg-black p-4"
+>
+	<button id={closeButtonId} class="absolute top-4 right-4 text-4xl text-white">&times;</button>
+	<div class="max-h-full max-w-full">
+		<Image
+			src={image}
+			alt={title}
+			class="max-h-[90vh] max-w-full object-contain"
+			width={1200}
+			densities={[1.5, 2]}
+		/>
+	</div>
+</div>
+
+<script define:vars={{ containerId, modalId, closeButtonId }}>
+	// Get elements using the unique IDs passed from the component
+	const imageContainer = document.getElementById(containerId);
+	const modal = document.getElementById(modalId);
+	const closeButton = document.getElementById(closeButtonId);
+
+	// Open modal when image is clicked
+	if (imageContainer && modal) {
+		imageContainer.addEventListener("click", () => {
+			modal.classList.remove("hidden");
+			document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+		});
+	}
+
+	// Close modal when close button is clicked
+	if (closeButton && modal) {
+		closeButton.addEventListener("click", (e) => {
+			e.stopPropagation();
+			modal.classList.add("hidden");
+			document.body.style.overflow = ""; // Restore scrolling
+		});
+	}
+
+	// Close modal when clicking outside the image
+	if (modal) {
+		modal.addEventListener("click", (e) => {
+			if (e.target === modal) {
+				modal.classList.add("hidden");
+				document.body.style.overflow = ""; // Restore scrolling
+			}
+		});
+	}
+
+	// Close modal with Escape key
+	document.addEventListener("keydown", (e) => {
+		if (e.key === "Escape" && modal && !modal.classList.contains("hidden")) {
+			modal.classList.add("hidden");
+			document.body.style.overflow = ""; // Restore scrolling
+		}
+	});
+</script>
