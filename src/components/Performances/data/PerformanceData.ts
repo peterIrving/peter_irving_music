@@ -39,10 +39,10 @@ export const performanceData: Performance[] = [
         imageURL: "https://tapalaluna.net/wp-content/uploads/2015/09/fulltapabar.jpg"
     },
     {
-        id: "crush-wine-bar-jun-2025",
+        id: "crush-wine-bar-may-2025",
         title: "Crush Wine Bar",
-        startTime: new Date("2025-06-01T19:00:00"),
-        endTime: new Date("2025-06-01T22:00:00"),
+        startTime: new Date("2025-05-31T19:00:00"),
+        endTime: new Date("2025-05-31T22:00:00"),
         location: "crush wine bar & shop, West Main Street, Waukesha, WI, USA",
         description: "7-10 pm",
         imageURL: "https://www.jsonline.com/gcdn/presto/2019/02/19/PMJS/b54bdf37-7659-4e08-80a5-eea5344913e5-DSC_0043.jpg?width=700&height=466&fit=crop&format=pjpg&auto=webp"
