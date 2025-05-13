@@ -15,6 +15,8 @@ interface Props {
 const { class: className } = Astro.props as Props;
 
 import contactFormImage from "@assets/images/peter-fiddle.jpeg";
+
+let showForm = false;
 ---
 
 <section
@@ -42,7 +44,23 @@ import contactFormImage from "@assets/images/peter-fiddle.jpeg";
 			</div>
 		</div>
 		<div class="md:pr-12 md:pl-20">
-			<ContactForm />
+			{
+				showForm ? (
+					<ContactForm />
+				) : (
+					<div>
+						<div class="flex h-full flex-col items-center justify-center">
+							<p class="mb-2 text-xl font-medium text-gray-800">Contact me at:</p>
+							<a
+								href="mailto:irving,peter92@gmail.com"
+								class="text-primary-600 text-lg hover:underline"
+							>
+								irving.peter92@gmail.com
+							</a>
+						</div>
+					</div>
+				)
+			}
 		</div>
 	</div>
 </section>
