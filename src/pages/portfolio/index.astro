@@ -5,7 +5,7 @@ import { getCollection, render } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
 // components
-import Contact from "@components/Contact/Contact.astro";
+// import Contact from "@components/Contact/Contact.astro";
 import PortfolioGrid from "@components/Portfolio/PortfolioGrid.astro";
 import TestimonialQuote from "@components/Testimonials/TestimonialQuote.astro";
 
@@ -27,5 +27,5 @@ const portfolios = await getCollection("portfolios", ({ data }) => {
 
 	<TestimonialQuote />
 
-	<Contact class="mt-12" />
+	<!-- <Contact class="mt-12" /> -->
 </BaseLayout>

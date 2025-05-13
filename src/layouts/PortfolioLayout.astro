@@ -8,7 +8,7 @@ import BaseLayout from "./BaseLayout.astro";
 
 // components
 import Button from "@components/Button/Button.astro";
-import Contact from "@components/Contact/Contact.astro";
+// import Contact from "@components/Contact/Contact.astro";
 import PortfolioGrid from "@components/Portfolio/PortfolioGrid.astro";
 import TestimonialQuote from "@components/Testimonials/TestimonialQuote.astro";
 import PortfolioImage from "@components/PorfolioImage/PortfolioImage.astro";
@@ -123,5 +123,5 @@ const otherPortfolios = await getCollection("portfolios", (otherPortfolio) => {
 		<h3 class="h2 text-center">More Portfolios</h3>
 		<PortfolioGrid portfolios={otherPortfolios} noTransitions />
 	</section>
-	<Contact class="mt-12" />
+	<!-- <Contact class="mt-12" /> -->
 </BaseLayout>
