@@ -31,7 +31,7 @@ const startToEndTimeString = () => {
 };
 ---
 
-<div class="performance-card">
+<div class="performance-card border-primary-200 rounded-lg border-2">
 	<div class="card-image">
 		{imageURL && <img src={imageURL} alt={title} class="venue-image" />}
 	</div>
@@ -47,11 +47,9 @@ const startToEndTimeString = () => {
 <style>
 	.performance-card {
 		display: flex;
-		border: 1px solid #ccc;
 		border-radius: 8px;
 		overflow: hidden;
 		margin: 1rem 0;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	}
 
 	.card-image {

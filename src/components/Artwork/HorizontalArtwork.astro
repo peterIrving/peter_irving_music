@@ -19,11 +19,11 @@ const closeButtonId = `close-modal-${uniqueId}`;
 ---
 
 <div
-	class="grid w-full items-center gap-1 rounded-xl border-2 border-green-500 p-4 lg:grid-cols-2 lg:gap-6"
+	class="border-primary-200 grid w-full items-center gap-1 rounded-lg border-2 p-4 lg:grid-cols-2 lg:gap-6"
 >
 	<div
 		class:list={[
-			"aspect-[4/3] w-full cursor-pointer overflow-hidden rounded-xl",
+			"aspect-[4/3] w-full cursor-pointer overflow-hidden",
 			{
 				"lg:order-2": imagePosition === "right",
 			},
@@ -33,7 +33,7 @@ const closeButtonId = `close-modal-${uniqueId}`;
 		<Image
 			src={image}
 			alt={title}
-			class="h-auto min-h-full w-full min-w-full rounded-lg object-cover"
+			class="h-auto min-h-full w-full min-w-full rounded-sm object-cover"
 			width={1000}
 			densities={[1.5, 2]}
 		/>
