@@ -60,10 +60,11 @@ const closeButtonId = `close-modal-${uniqueId}`;
 <!-- Modal for full-screen image -->
 <div
 	id={modalId}
-	class="bg-opacity-90 fixed inset-0 z-50 flex hidden items-center justify-center bg-black p-4"
+	class="bg-opacity-90 fixed inset-0 z-50 flex hidden h-screen w-screen items-center justify-center bg-black"
+	style="height: 100vh; width: 100vw; margin: 0; padding: 0;"
 >
 	<button id={closeButtonId} class="absolute top-4 right-4 text-4xl text-white">&times;</button>
-	<div class="max-h-full max-w-full">
+	<div class="max-h-full max-w-full p-4">
 		<Image
 			src={image}
 			alt={title}
