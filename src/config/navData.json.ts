@@ -43,15 +43,6 @@ const navData: navItem[] = [
 		text: "Artwork",
 		link: "/artwork",
 	},
-	{
-		text: "Contact",
-		link: "/#contact",
-	},
-
-	// {
-	// 	text: "Pricing",
-	// 	link: "/#pricing",
-	// },
 ];
 
 export default navData;
