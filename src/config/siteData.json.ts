@@ -18,21 +18,21 @@ export interface SiteDataProps {
 const siteData: SiteDataProps = {
 	name: "Peter Irving Music",
 	// Your website's title and description (meta fields)
-	title: "Peter Irving - Songwriting and Performance",
+	title: "Peter Irving - Songwriter, Musician & Performer",
 	description:
-		"Explore the soulful world of Peter Irving, featuring old-time music, country blues, and ragtime performances. Discover his unique songwriting and captivating live shows.",
+		"Peter Irving is a Milwaukee-based musician specializing in old-time music, country blues, and ragtime performances. Book him for events or explore his original compositions.",
 	useViewTransitions: true,
 	// Your information!
 	author: {
-		name: "Peter irving",
+		name: "Peter Irving",
 		email: "irving.peter92@gmail.com",
 		instagram: "peterirving.live"
 	},
 
 	// default image for meta tags if the page doesn't have an image already
 	defaultImage: {
-		src: "/images/cosmic-themes-logo.jpg",
-		alt: "Cosmic Themes logo",
+		src: "/images/peter-irving-musician.jpg",
+		alt: "Peter Irving performing music",
 	},
 };
 

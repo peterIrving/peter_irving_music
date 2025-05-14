@@ -69,4 +69,65 @@ const imageUrl =
 	}}
 	noindex={noindex}
 	nofollow={noindex}
+	extend={{
+		// Add JSON-LD structured data for a musician
+		link: [
+			{ rel: "icon", href: "/favicon.ico" },
+			{ rel: "sitemap", href: "/sitemap-index.xml" },
+		],
+		meta: [
+			{ name: "viewport", content: "width=device-width, initial-scale=1" },
+			{ name: "generator", content: Astro.generator },
+			// Instagram doesn't have specific meta tags like Twitter does,
+			// but these social meta tags help with general sharing
+			{ property: "og:locale", content: "en_US" },
+			{ property: "og:site_name", content: siteData.title },
+			{ property: "og:image:alt", content: title },
+			// Add author information
+			{ name: "author", content: siteData.author.name },
+		],
+	}}
+/>
+
+<!-- Add structured data for a musician -->
+<script
+	type="application/ld+json"
+	set:html={JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "MusicGroup",
+		name: "Peter Irving",
+		url: Astro.site?.toString(),
+		image: imageUrl,
+		description: description,
+		genre: ["Old-time music", "Country blues", "Ragtime"],
+		sameAs: [
+			`https://instagram.com/${siteData.author.instagram}`,
+			"https://www.youtube.com/@peterirving9458",
+		],
+	})}
+/>
+
+<!-- Add this structured data for local business -->
+<script
+	type="application/ld+json"
+	set:html={JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "LocalBusiness",
+		name: "Peter Irving Music",
+		image: imageUrl,
+		url: Astro.site?.toString(),
+		telephone: "+1-XXX-XXX-XXXX", // Add your phone if you want to share it
+		address: {
+			"@type": "PostalAddress",
+			addressLocality: "Milwaukee",
+			addressRegion: "WI",
+			addressCountry: "US",
+		},
+		geo: {
+			"@type": "GeoCoordinates",
+			latitude: 43.0389, // Milwaukee coordinates
+			longitude: -87.9065,
+		},
+		priceRange: "$$",
+	})}
 />

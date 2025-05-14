@@ -1,0 +1,29 @@
+---
+const { paths = [] } = Astro.props;
+---
+
+<nav aria-label="Breadcrumb" class="mb-4">
+	<ol class="flex flex-wrap items-center space-x-1 text-sm">
+		<li>
+			<a href="/" class="text-primary-500 hover:underline">Home</a>
+			<span class="ml-1">/</span>
+		</li>
+		{
+			paths.map((path, index) => (
+				<li>
+					{index === paths.length - 1 ? (
+						<span class="text-base-600">{path.name}</span>
+					) : (
+						<>
+							<a href={path.url} class="text-primary-500 hover:underline">
+								{path.name}
+							</a>
+							<span class="ml-1">/</span>
+						</>
+					)}
+				</li>
+			))
+		}
+	</ol>
+</nav>
+
