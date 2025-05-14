@@ -16,14 +16,14 @@ export interface MusicVideo {
 export const videoData: MusicVideo[] = [
     {
         name: "The Blackest Crow",
-        description: "An engaging music video with stunning visuals.",
+        description: "Played on a gourd banjo from gourdbanjosbybarry.com",
         videoURL: "https://www.youtube.com/embed/JfXgfRpcCzg?si=EFXAF87rCia9242t",
         vertical: true,
         videoType: VideoType.Traditional,
     },
     {
         name: "Angeline the Baker",
-        description: "A beautiful music video showcasing the artist's talent.",
+        description: "with the five piece band",
         videoURL: "https://www.youtube.com/embed/S9tJVVt5GPc",
         vertical: true,
         videoType: VideoType.Traditional,
