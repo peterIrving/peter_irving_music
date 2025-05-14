@@ -1,18 +1,25 @@
 ---
-import PerformanceTabs from "./PerformanceTabs.vue";
+import TabView from "../../UI/TabView.vue";
 import PerformanceList from "./PerformanceList.astro";
 import { PerformanceTimeframe } from "../data/PerformanceTimeframe";
 ---
 
 <div class="performance-view-container">
-	<PerformanceTabs initialTab="upcoming" client:load>
+	<TabView
+		initialTab="upcoming"
+		tabs={[
+			{ id: "upcoming", label: "Upcoming" },
+			{ id: "past", label: "Past" },
+		]}
+		client:load
+	>
 		<div slot="upcoming">
 			<PerformanceList timeframe={PerformanceTimeframe.Upcoming} />
 		</div>
 		<div slot="past">
 			<PerformanceList timeframe={PerformanceTimeframe.Past} />
 		</div>
-	</PerformanceTabs>
+	</TabView>
 </div>
 
 <style>

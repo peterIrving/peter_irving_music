@@ -1,0 +1,61 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import TabView from "@components/UI/TabView.vue";
+import OriginalVideoList from "@components/Music/OriginalVideoList.astro";
+import TraditionalVideoList from "@components/Music/TraditionalVideoList.astro";
+---
+
+<BaseLayout
+	title="Music | Peter Irving"
+	description="Original music and traditional tunes by Peter Irving"
+>
+	<section class="site-container scroll-mt-10 py-8 md:py-12">
+		<div class="mx-auto max-w-6xl pt-24 text-center md:pt-28 lg:pt-32">
+			<h1 class="h2 text-pretty uppercase">Music</h1>
+		</div>
+
+		<div class="mt-8">
+			<div class="music-view-container">
+				<TabView
+					initialTab="originals"
+					tabs={[
+						{ id: "originals", label: "Originals" },
+						{ id: "traditional", label: "Traditional Tunes" },
+					]}
+					client:load
+				>
+					<div slot="originals">
+						<!-- Content for original music -->
+						<div class="content-container">
+							<h2 class="h3 mb-6">Original Compositions</h2>
+							<!-- Your original music content here -->
+							<OriginalVideoList />
+						</div>
+					</div>
+
+					<div slot="traditional">
+						<!-- Content for traditional tunes -->
+						<div class="content-container">
+							<h2 class="h3 mb-6">Traditional Tunes</h2>
+							<!-- Your traditional tunes content here -->
+							<TraditionalVideoList />
+						</div>
+					</div>
+				</TabView>
+			</div>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.music-view-container {
+		width: 100%;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+
+	.content-container {
+		padding: 1rem 0;
+	}
+</style>

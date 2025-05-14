@@ -27,21 +27,15 @@ const navData: navItem[] = [
 	},
 	{
 		text: "Music",
-		dropdown: [
-			{
-				text: "Originals",
-				link: "/original-music/",
-			},
-			{
-				text: "Traditional Tunes",
-				link: "/traditional-tunes/",
-			},
-
-		],
+		link: "/music",
 	},
 	{
 		text: "Artwork",
 		link: "/artwork",
+	},
+	{
+		text: "Contact",
+		link: "/#contact",
 	},
 ];
 
