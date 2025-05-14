@@ -11,14 +11,16 @@ export interface Props {
 const { title, startTime, endTime, location, description, imageURL } = Astro.props.performance;
 const { index, timeframe } = Astro.props;
 
-// Import images
-import peterBanjoSerious from "../../../assets/images/peter-banjo.jpeg";
-import peterBanjoHappy from "../../../assets/images/peter-headshot.jpeg";
-import peterFiddle from "../../../assets/images/peter-fiddle.jpeg";
+// Import landscape images
+import landscape1 from "../../../assets/images/landscapes/IMG_2213.jpeg";
+import landscape5 from "../../../assets/images/landscapes/IMG_2431.jpeg";
+import landscape3 from "../../../assets/images/landscapes/IMG_2568.jpeg";
+import landscape4 from "../../../assets/images/landscapes/IMG_3158.jpeg";
+import landscape2 from "../../../assets/images/landscapes/skyline_from_a_distance.jpg";
 import { PerformanceTimeframe } from "../data/PerformanceTimeframe";
 
 // Use a default image
-const defaultImage = peterBanjoHappy.src;
+const defaultImage = landscape1.src;
 
 const monthDayYearString = () => {
 	const options: Intl.DateTimeFormatOptions = {
@@ -82,9 +84,9 @@ const generateICalContent = () => {
 	return "data:text/calendar;charset=utf8," + encodeURIComponent(icalContent);
 };
 
-// Function to cycle through Peter's images based on index
+// Function to cycle through landscape images based on index
 const getBackupImage = (index: number) => {
-	const images = [peterBanjoSerious, peterBanjoHappy, peterFiddle];
+	const images = [landscape1, landscape2, landscape3, landscape4, landscape5];
 	const imageIndex = index % images.length;
 	return images[imageIndex];
 };
