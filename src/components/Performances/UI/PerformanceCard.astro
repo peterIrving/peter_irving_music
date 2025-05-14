@@ -132,12 +132,12 @@ const formatLocation = (location: string) => {
 		<h2 class="performance-title">{title}</h2>
 		<p class="performance-date">{monthDayYearString()}</p>
 		<p class="performance-time">{startToEndTimeString()}</p>
-		<p class="performance-location text-sm">
+		<p class="performance-location text-md">
 			<a
 				href={`https://maps.google.com/?q=${encodeURIComponent(location)}`}
 				target="_blank"
 				rel="noopener noreferrer"
-				class="location-link"
+				class="location-link text-primary-500"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -303,12 +303,13 @@ const formatLocation = (location: string) => {
 
 	.location-link {
 		display: inline-flex;
-		align-items: center;
+		align-items: flex-start !important; /* Force top alignment */
 		gap: 0.25rem;
 	}
 
 	.location-icon {
 		flex-shrink: 0;
+		margin-top: 0.25em; /* Align with first line of text */
 	}
 
 	/* Make it responsive */
