@@ -16,21 +16,23 @@ const activeTab = ref(props.initialTab);
 <template>
   <div class="performance-tabs">
     <!-- Tab buttons -->
-    <div class="tab-buttons">
-      <button 
-        @click="activeTab = 'upcoming'" 
-        :class="{ active: activeTab === 'upcoming' }"
-        class="tab-button"
-      >
-        Upcoming
-      </button>
-      <button 
-        @click="activeTab = 'past'" 
-        :class="{ active: activeTab === 'past' }"
-        class="tab-button"
-      >
-        Past
-      </button>
+    <div class="tab-buttons-container">
+      <div class="tab-buttons">
+        <button 
+          @click="activeTab = 'upcoming'" 
+          :class="{ active: activeTab === 'upcoming' }"
+          class="tab-button"
+        >
+          Upcoming
+        </button>
+        <button 
+          @click="activeTab = 'past'" 
+          :class="{ active: activeTab === 'past' }"
+          class="tab-button"
+        >
+          Past
+        </button>
+      </div>
     </div>
     
     <!-- Tab content -->
@@ -53,10 +55,16 @@ const activeTab = ref(props.initialTab);
   margin: 0 auto;
 }
 
-.tab-buttons {
+.tab-buttons-container {
   display: flex;
-  border-bottom: 2px solid var(--color-primary-200, #a7f3d0);
+  justify-content: center;
+  width: 100%;
   margin-bottom: 20px;
+}
+
+.tab-buttons {
+  display: inline-flex;
+  border-bottom: 2px solid var(--color-primary-200, #a7f3d0);
 }
 
 .tab-button {
@@ -87,5 +95,16 @@ const activeTab = ref(props.initialTab);
 
 .tab-panel {
   padding: 10px 0;
+}
+
+@media (max-width: 640px) {
+  .tab-buttons {
+    width: 100%;
+  }
+  
+  .tab-button {
+    flex: 1;
+    text-align: center;
+  }
 }
 </style> 
