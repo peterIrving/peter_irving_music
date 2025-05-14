@@ -1,0 +1,25 @@
+---
+import PerformanceTabs from "./PerformanceTabs.vue";
+import PerformanceList from "./PerformanceList.astro";
+import { PerformanceTimeframe } from "../data/PerformanceTimeframe";
+---
+
+<div class="performance-view-container">
+	<PerformanceTabs initialTab="upcoming" client:load>
+		<div slot="upcoming">
+			<PerformanceList timeframe={PerformanceTimeframe.Upcoming} />
+		</div>
+		<div slot="past">
+			<PerformanceList timeframe={PerformanceTimeframe.Past} />
+		</div>
+	</PerformanceTabs>
+</div>
+
+<style>
+	.performance-view-container {
+		width: 100%;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+</style>

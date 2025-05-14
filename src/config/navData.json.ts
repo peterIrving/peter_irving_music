@@ -12,24 +12,18 @@ export interface navDropdownItem {
 export type navItem = navLinkItem | navDropdownItem;
 
 // note: 1 level of dropdown is supported
-const navConfig: navItem[] = [
+const navData: navItem[] = [
 	{
 		text: "Home",
 		link: "/",
 	},
 	{
+		text: "About",
+		link: "/#about",
+	},
+	{
 		text: "Performances",
-		dropdown: [
-			{
-				text: "Upcoming",
-				link: "/performances",
-			},
-			{
-				text: "Past",
-				link: "/past-performances",
-			},
-
-		],
+		link: "/performances",
 	},
 	{
 		text: "Music",
@@ -49,6 +43,10 @@ const navConfig: navItem[] = [
 		text: "Artwork",
 		link: "/artwork",
 	},
+	{
+		text: "Contact",
+		link: "/#contact",
+	},
 
 	// {
 	// 	text: "Pricing",
@@ -56,4 +54,4 @@ const navConfig: navItem[] = [
 	// },
 ];
 
-export default navConfig;
+export default navData;

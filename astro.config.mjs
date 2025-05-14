@@ -6,6 +6,7 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import compress from "@playform/compress";
 import AutoImport from "astro-auto-import";
+import vue from "@astrojs/vue";
 
 // https://astro.build/config
 export default defineConfig({
@@ -42,6 +43,7 @@ export default defineConfig({
 			},
 		}),
 		sitemap(),
+		vue(),
 		compress({
 			HTML: true,
 			JavaScript: true,
