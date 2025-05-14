@@ -14,12 +14,13 @@ const { video } = Astro.props;
 	<div class="w-full lg:w-3/5">
 		<div class="relative w-full" style="padding-top: 56.25%">
 			<iframe
-				src={`${video.videoURL}?playsinline=1&rel=0&modestbranding=1`}
+				src={`${video.videoURL}?playsinline=1&rel=0&modestbranding=1&vq=hd720&hq=1`}
 				class="absolute inset-0 h-full w-full"
 				title="YouTube video player"
 				frameborder="0"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 				referrerpolicy="strict-origin-when-cross-origin"
+				loading="lazy"
 				allowfullscreen></iframe>
 		</div>
 	</div>

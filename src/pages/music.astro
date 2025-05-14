@@ -3,6 +3,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import TabView from "@components/UI/TabView.vue";
 import OriginalVideoList from "@components/Music/OriginalVideoList.astro";
 import TraditionalVideoList from "@components/Music/TraditionalVideoList.astro";
+import PageTitle from "@components/UI/PageTitle.astro";
 ---
 
 <BaseLayout
@@ -10,9 +11,7 @@ import TraditionalVideoList from "@components/Music/TraditionalVideoList.astro";
 	description="Original music and traditional tunes by Peter Irving"
 >
 	<section class="site-container scroll-mt-10 py-8 md:py-12">
-		<div class="mx-auto max-w-6xl pt-24 text-center md:pt-28 lg:pt-32">
-			<h1 class="h2 text-pretty uppercase">Music</h1>
-		</div>
+		<PageTitle title="Music" />
 
 		<div class="mt-8">
 			<div class="music-view-container">

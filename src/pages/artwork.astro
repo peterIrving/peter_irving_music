@@ -1,16 +1,15 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Postcards from "@components/Artwork/Artwork.astro";
+import PageTitle from "@components/UI/PageTitle.astro";
 ---
 
 <BaseLayout
 	title="Artwork"
 	description="Analog and Digital watercolor paintings, illustrations, and more."
 >
-	<div
-		class="mx-auto max-w-7xl px-4 py-8 pt-24 sm:px-6 md:px-8 md:py-18 md:pt-28 lg:px-12 lg:py-18 lg:pt-32"
-	>
-		<h1 class="font-heading-1 mb-4 text-center text-4xl">Artwork</h1>
+	<section class="site-container scroll-mt-10 py-8 md:py-12">
+		<PageTitle title="Artwork" />
 		<Postcards />
-	</div>
+	</section>
 </BaseLayout>

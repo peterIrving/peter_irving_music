@@ -1,10 +1,14 @@
 ---
 import ContactComponent from "@components/Contact/ContactComponent.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import PageTitle from "@components/UI/PageTitle.astro";
 ---
 
 <BaseLayout title="Contact" description="Get in touch with Peter.">
-	<div class="py-24">
-		<ContactComponent />
-	</div>
+	<section class="site-container scroll-mt-10 py-8 md:py-12">
+		<!-- <PageTitle title="Contact" /> -->
+		<div class="pt-8">
+			<ContactComponent />
+		</div>
+	</section>
 </BaseLayout>
