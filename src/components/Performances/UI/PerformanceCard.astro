@@ -256,8 +256,16 @@ const getBackupImage = (index: number) => {
 		}
 
 		.card-image {
-			flex: 0 0 200px;
+			flex: 0 0 auto;
 			width: 100%;
+			height: auto;
+		}
+
+		.venue-image {
+			width: 100%;
+			height: auto;
+			aspect-ratio: 10/7; /* This makes the height 0.7 times the width */
+			object-fit: cover;
 		}
 
 		.calendar-buttons {
