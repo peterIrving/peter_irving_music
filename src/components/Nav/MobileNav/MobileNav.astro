@@ -8,6 +8,12 @@ import Button from "@components/Button/Button.astro";
 
 // data
 import navData from "@config/navData.json.ts";
+
+interface Props {
+	startStyle?: "default" | "white"; // if set to "white", the nav elements will be white until the page is scrolled down. Useful for background hero images.
+}
+
+const { startStyle = "default" } = Astro.props as Props;
 ---
 
 <div id="mobile-nav__container">
@@ -53,13 +59,34 @@ import navData from "@config/navData.json.ts";
 							),
 						)
 					}
+
+					<!-- <button
+						class:list={[
+							"nav__link--base mobile-nav__dropdown-button flex flex-1 items-center justify-between",
+							"border-primary-200 hover:border-primary-200/80 rounded-md border-2 px-6 py-2 text-lg font-medium transition-colors duration-200",
+						]}
+						type="button"
+					>
+						Contact
+					</button> -->
+					<!-- <li class="flex justify-start py-2 pl-4">
+						<a
+							href="/contact"
+							class="border-primary-200 hover:border-primary-200/80 inline-block rounded-md border-2 px-6 py-2 text-lg font-medium transition-colors duration-200"
+						>
+							Contact
+						</a>
+					</li> -->
 				</ul>
-			</nav>
-			<div class="mx-1 mt-2 w-full px-4">
-				<Button variant="outline" class="w-full" href="https://cosmicthemes.com/themes/horizon/">
-					Get Horizon
+				<Button
+					variant="secondary"
+					class=`mt-2 mx-4  ${startStyle === "white" ? "data-[scrolled=true]:border-primary-200 data-[scrolled=true]:hover:border-primary-200/80" : "border-primary-200"}`
+					href="/contact"
+					data-scrolled="false"
+				>
+					Contact
 				</Button>
-			</div>
+			</nav>
 		</div>
 	</div>
 
