@@ -11,7 +11,7 @@ import navData from "@config/navData.json.ts";
 // console.log(JSON.stringify(navData, null, 2));
 
 interface Props {
-	startStyle?: "default" | "white"; // if set to "white", the nav elements will be white until the page is scrolled down. Useful for background hero images.
+	startStyle?: "default" | "dark"; // if set to "white", the nav elements will be white until the page is scrolled down. Useful for background hero images.
 	rest?: any; // catch-all for any additional parameters, such as "aria-label"
 }
 
@@ -24,7 +24,10 @@ const { startStyle = "default", rest } = Astro.props as Props;
 	transition:name={`nav`}
 	{...rest}
 >
-	<div class="mx-auto flex w-full" class:list={[{ "text-base-900": startStyle === "default" }]}>
+	<div
+		class="mx-auto flex w-full"
+		class:list={[{ "text-base-900": startStyle === "default" || startStyle === "dark" }]}
+	>
 		<div class="site-container flex h-16 w-full items-center">
 			<header class="flex w-full items-center gap-2">
 				<!-- home button / image -->
@@ -52,7 +55,7 @@ const { startStyle = "default", rest } = Astro.props as Props;
 					</nav>
 					<Button
 						variant="secondary"
-						class=`nav__cta py-1 my-auto hidden md:block ${startStyle === "white" ? "data-[scrolled=true]:border-primary-200 data-[scrolled=true]:hover:border-primary-200/80" : "border-primary-200"}`
+						class=`nav__cta py-1 my-auto hidden md:block ${startStyle === "dark" ? "data-[scrolled=true]:border-primary-200 data-[scrolled=true]:hover:border-primary-200/80" : "border-primary-200"}`
 						href="/contact"
 						data-scrolled="false"
 					>
