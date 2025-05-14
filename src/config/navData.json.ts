@@ -17,10 +17,7 @@ const navData: navItem[] = [
 		text: "Home",
 		link: "/",
 	},
-	{
-		text: "About",
-		link: "/#about",
-	},
+
 	{
 		text: "Performances",
 		link: "/performances",
@@ -32,10 +29,6 @@ const navData: navItem[] = [
 	{
 		text: "Artwork",
 		link: "/artwork",
-	},
-	{
-		text: "Contact",
-		link: "/#contact",
 	},
 ];
 
