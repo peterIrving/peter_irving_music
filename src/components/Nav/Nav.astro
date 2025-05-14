@@ -38,7 +38,10 @@ const { startStyle = "default", rest } = Astro.props as Props;
 				<!-- desktop nav menu -->
 				<div class="flex flex-auto justify-end lg:gap-4">
 					<nav class="hidden md:block">
-						<ul class="flex h-full items-center justify-center px-4 text-lg lg:gap-4">
+						<ul
+							class="flex h-full items-center justify-center px-4 text-lg lg:gap-4"
+							style="text-shadow: 0 0 5px #ffffff61, 0 0 10px #ffffff2c;"
+						>
 							{
 								// if dropdown exists, setup the dropdown, otherwise it is just a link
 								navData.map((navItem) =>
@@ -59,7 +62,7 @@ const { startStyle = "default", rest } = Astro.props as Props;
 						href="/contact"
 						data-scrolled="false"
 					>
-						Contact
+						<div style="text-shadow: 0 0 5px #ffffff61, 0 0 10px #ffffff2c;">Contact</div>
 					</Button>
 
 					<!-- mobile nav menu, only load on small screens where it is visible -->
