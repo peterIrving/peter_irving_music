@@ -90,6 +90,32 @@ const getBackupImage = (index: number) => {
 	const imageIndex = index % images.length;
 	return images[imageIndex];
 };
+
+// Function to format location by removing zip code and country
+const formatLocation = (location: string) => {
+	if (!location) return "";
+
+	// Remove zip codes (both US 5-digit and extended formats)
+	let formatted = location.replace(/\b\d{5}(-\d{4})?\b/g, "");
+
+	// Remove common country names and abbreviations
+	formatted = formatted.replace(/\b(USA|United States|US|Canada|CA)\b/g, "");
+
+	// Clean up any trailing commas, multiple commas, or extra spaces
+	formatted = formatted
+		.replace(/,\s*,/g, ",")
+		.replace(/,\s*$/g, "")
+		.replace(/\s{2,}/g, " ")
+		.trim();
+
+	// If there's a comma, assume it's in City, State format and keep it
+	if (formatted.includes(",")) {
+		const parts = formatted.split(",").map((part) => part.trim());
+		return parts.filter(Boolean).join(", ");
+	}
+
+	return formatted;
+};
 ---
 
 <div class="performance-card border-primary-200 rounded-lg border-2">
@@ -106,8 +132,32 @@ const getBackupImage = (index: number) => {
 		<h2 class="performance-title">{title}</h2>
 		<p class="performance-date">{monthDayYearString()}</p>
 		<p class="performance-time">{startToEndTimeString()}</p>
-		<p class="performance-location">{location}</p>
-		<p class="performance-description">{description}</p>
+		<p class="performance-location text-sm">
+			<a
+				href={`https://maps.google.com/?q=${encodeURIComponent(location)}`}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="location-link"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="16"
+					height="16"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					class="location-icon"
+				>
+					<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+					<circle cx="12" cy="10" r="3"></circle>
+				</svg>
+				{formatLocation(location)}
+			</a>
+		</p>
+		<!-- <p class="performance-description">{description}</p> -->
 		{
 			timeframe === PerformanceTimeframe.Upcoming && (
 				<div class="calendar-buttons">
@@ -248,6 +298,16 @@ const getBackupImage = (index: number) => {
 	}
 
 	.btn-icon {
+		flex-shrink: 0;
+	}
+
+	.location-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.25rem;
+	}
+
+	.location-icon {
 		flex-shrink: 0;
 	}
 
