@@ -29,6 +29,14 @@ export const videoData: MusicVideo[] = [
         videoType: VideoType.Traditional,
 
     },
+    // greasy coat 
+    {
+        name: "Greasy Coat",
+        description: "A song about a greasy coat",
+        videoURL: "https://www.youtube.com/embed/zZEJXJgDxjw",
+        vertical: true,
+        videoType: VideoType.Traditional,
+    },
     {
         name: "Creel of Turf",
         description: "A basket of grass in irish vernacular",
@@ -37,6 +45,7 @@ export const videoData: MusicVideo[] = [
         videoType: VideoType.Traditional,
 
     },
+
     {
         name: "Tattered Blinds",
         description: "Inspired by the likes of Hank Williams and Watchhouse (Mandolin Orange)",
