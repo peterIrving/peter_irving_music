@@ -26,7 +26,9 @@ import Button from "@components/Button/Button.astro";
 			<textarea name="message" id="message" rows="5" required></textarea>
 		</div>
 
-		<button type="submit" class="submit-button">Send Message</button>
+		<div class="flex justify-end">
+			<Button type="submit" variant="outline" class="px-8">Send Message</Button>
+		</div>
 	</form>
 </div>
 
@@ -54,21 +56,6 @@ import Button from "@components/Button/Button.astro";
 		border-radius: 4px;
 		font-family: inherit;
 		font-size: 1rem;
-	}
-
-	.submit-button {
-		background-color: #0051a8;
-		color: white;
-		border: none;
-		padding: 0.75rem 1.5rem;
-		border-radius: 4px;
-		font-size: 1rem;
-		cursor: pointer;
-		transition: background-color 0.2s;
-	}
-
-	.submit-button:hover {
-		background-color: #0051a8;
 	}
 
 	.hidden {
