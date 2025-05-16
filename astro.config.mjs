@@ -7,7 +7,6 @@ import sitemap from "@astrojs/sitemap";
 import compress from "@playform/compress";
 import AutoImport from "astro-auto-import";
 import vue from "@astrojs/vue";
-import umami from "@yeskunall/astro-umami";
 
 
 // https://astro.build/config

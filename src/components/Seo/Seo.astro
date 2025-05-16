@@ -1,10 +1,9 @@
 ---
-import { getImage } from "astro:assets";
-import { type CollectionEntry } from "astro:content";
 import { SEO } from "astro-seo";
 
 // component import
 import siteData from "@config/siteData.json";
+import type { ImageMetadata } from "astro";
 
 interface BaseProps {
 	title: string;
@@ -19,18 +18,7 @@ interface GenProps extends BaseProps {
 
 const { title = "general", description, image, noindex = false } = Astro.props as GenProps;
 
-let optimizedImage;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
-
-// if this is a blog page we do things differently
-if (image) {
-	optimizedImage = await getImage({
-		src: image,
-		format: "webp",
-		quality: "high",
-		width: 1200,
-	});
-}
 
 function trimEndSlash(str: string) {
 	if (str[str.length - 1] === "/") {
@@ -40,9 +28,10 @@ function trimEndSlash(str: string) {
 	}
 }
 
-// put together the image URL
-const imageUrl =
-	trimEndSlash(Astro.site?.toString() || "") + (optimizedImage?.src || siteData.defaultImage.src);
+// put together the image URL - simplified approach
+const imageUrl = image
+	? trimEndSlash(Astro.site?.toString() || "") + image.src
+	: trimEndSlash(Astro.site?.toString() || "") + siteData.defaultImage.src;
 ---
 
 <SEO
@@ -62,8 +51,8 @@ const imageUrl =
 		},
 		image: {
 			type: "image/webp",
-			width: optimizedImage?.attributes.width || "1200",
-			height: optimizedImage?.attributes.height || "800",
+			width: image?.width,
+			height: image?.height,
 			alt: title,
 		},
 	}}

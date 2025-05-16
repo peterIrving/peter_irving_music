@@ -1,6 +1,4 @@
 ---
-import { type CollectionEntry } from "astro:content";
-
 // component imports
 import BaseHead from "@layouts/BaseHead.astro";
 import Nav from "@components/Nav/Nav.astro";
@@ -8,6 +6,7 @@ import Footer from "@components/Footer/Footer.astro";
 
 // style import
 import "@/styles/global.css";
+import type { ImageMetadata } from "astro";
 
 // heroImage and authorData are defined on blog posts
 // authorData could also be defined on the about author page
