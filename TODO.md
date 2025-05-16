@@ -1,6 +1,7 @@
 #TODO 
 
 - Google Indexing
+- obfuscate email on contact
 - (3rd party) add analytics - Umani cloud
 - add more videos (creel of turf, red hair boy)
 - (3rd party) add email list (use exported list from wix)
