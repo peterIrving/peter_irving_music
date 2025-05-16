@@ -16,7 +16,7 @@ const { class: className } = Astro.props as Props;
 
 import contactFormImage from "@assets/images/peter-fiddle.jpeg";
 
-let showForm = false;
+let showForm = true;
 ---
 
 <section
@@ -64,3 +64,23 @@ let showForm = false;
 		</div>
 	</div>
 </section>
+
+<style>
+	.contact-section {
+		padding: 4rem 0;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+
+	h2 {
+		margin-bottom: 1rem;
+	}
+
+	p {
+		margin-bottom: 2rem;
+	}
+</style>
