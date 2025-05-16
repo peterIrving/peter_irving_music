@@ -44,6 +44,9 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.0.6
         version: 4.0.6(vite@6.1.0(@types/node@22.10.5)(jiti@2.4.2)(lightningcss@1.29.1)(sass@1.83.0)(terser@5.37.0)(yaml@2.6.1))
+      '@yeskunall/astro-umami':
+        specifier: ^0.0.5
+        version: 0.0.5(astro@5.3.0(@types/node@22.10.5)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.40.2)(sass@1.83.0)(terser@5.37.0)(typescript@5.7.2)(yaml@2.6.1))
       astro:
         specifier: ^5.3.0
         version: 5.3.0(@types/node@22.10.5)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.40.2)(sass@1.83.0)(terser@5.37.0)(typescript@5.7.2)(yaml@2.6.1)
@@ -1361,6 +1364,11 @@ packages:
 
   '@vue/shared@3.5.13':
     resolution: {integrity: sha512-/hnE/qP5ZoGpol0a5mDi45bOd7t3tjYJBjsgCsivow7D48cJeV5l05RD82lPqi7gRiphZM37rnhW1l6ZoCNNnQ==}
+
+  '@yeskunall/astro-umami@0.0.5':
+    resolution: {integrity: sha512-PRxSo6Gox5+GC/Mjb1Q4/l7zioI0J7uxw0N8WjejEyMBD6+pJiDBcetmA+JLY39fWPtupq0181jsAUYEPraSfw==}
+    peerDependencies:
+      astro: ^3.0.0 || ^4.0.0 || ^5.0.0
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -4921,6 +4929,10 @@ snapshots:
       vue: 3.5.13(typescript@5.7.2)
 
   '@vue/shared@3.5.13': {}
+
+  '@yeskunall/astro-umami@0.0.5(astro@5.3.0(@types/node@22.10.5)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.40.2)(sass@1.83.0)(terser@5.37.0)(typescript@5.7.2)(yaml@2.6.1))':
+    dependencies:
+      astro: 5.3.0(@types/node@22.10.5)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.40.2)(sass@1.83.0)(terser@5.37.0)(typescript@5.7.2)(yaml@2.6.1)
 
   acorn-jsx@5.3.2(acorn@8.14.0):
     dependencies:
