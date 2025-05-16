@@ -53,9 +53,7 @@ export default defineConfig({
 			Image: false, // astro:assets handles this. Enabling this can dramatically increase build times
 			SVG: false, // astro-icon handles this
 		}),
-		umami({
-			id: "e0965b9b-2d3b-4d00-8339-04bf810d5024",
-		}),
+
 	],
 	vite: {
 		plugins: [tailwindcss()],
