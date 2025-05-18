@@ -4,6 +4,7 @@ import TabView from "@components/UI/TabView.vue";
 import OriginalVideoList from "@components/Music/OriginalVideoList.astro";
 import TraditionalVideoList from "@components/Music/TraditionalVideoList.astro";
 import PageTitle from "@components/UI/PageTitle.astro";
+import VocalCoverList from "@components/Music/VocalCoversList.astro";
 ---
 
 <BaseLayout
@@ -20,6 +21,7 @@ import PageTitle from "@components/UI/PageTitle.astro";
 					tabs={[
 						{ id: "originals", label: "Originals" },
 						{ id: "traditional", label: "Traditional Tunes" },
+						{ id: "covers", label: "Vocal Covers" },
 					]}
 					client:load
 				>
@@ -34,6 +36,13 @@ import PageTitle from "@components/UI/PageTitle.astro";
 						<!-- Content for traditional tunes -->
 						<div class="content-container">
 							<TraditionalVideoList />
+						</div>
+					</div>
+
+					<div slot="covers">
+						<!-- Content for vocal covers -->
+						<div class="content-container">
+							<VocalCoverList />
 						</div>
 					</div>
 				</TabView>

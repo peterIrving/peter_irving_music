@@ -1,6 +1,7 @@
 export enum VideoType {
     Originals = "Originals",
     Traditional = "Traditional",
+    Covers = "Covers",
 }
 
 export interface MusicVideo {
@@ -66,5 +67,26 @@ export const videoData: MusicVideo[] = [
         videoURL: "https://www.youtube.com/embed/MNIcTCC2R9Y",
         vertical: false,
         videoType: VideoType.Originals,
+    },
+    {
+        name: "Sitting on Top of the World",
+        description: "Cover of the classic blues song",
+        videoURL: "https://www.youtube.com/embed/N8U6DdONxSk",
+        vertical: false,
+        videoType: VideoType.Covers,
+    },
+    {
+        name: "Paradise",
+        description: "Cover of John Prine's beloved song about coal country",
+        videoURL: "https://www.youtube.com/embed/ebwpye7kTt0",
+        vertical: false,
+        videoType: VideoType.Covers,
+    },
+    {
+        name: "Folsom Prison Blues",
+        description: "Cover of Johnny Cash's iconic song",
+        videoURL: "https://www.youtube.com/embed/_xH3AvlFlBo",
+        vertical: false,
+        videoType: VideoType.Covers,
     },
 ];
