@@ -36,7 +36,7 @@ export const performanceData: Performance[] = [
         endTime: new Date("2025-06-13T21:00:00"),
         location: "Tapa La Luna, East Lincoln Highway, DeKalb, IL, USA",
         description: "playing 6-9pm come on out!",
-        imageURL: "https://tapalaluna.net/wp-content/uploads/2015/09/fulltapabar.jpg"
+        imageURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3ZrKKwZoD-tcgkzPJn26cc20YneS5S5r2lg&s"
     },
     {
         id: "crush-wine-bar-may-2025",
