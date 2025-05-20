@@ -2,8 +2,6 @@
 
 - add errror image to performance card <img > tag
 - new pics website
-- remove android download prompt
-- add vocal covers
 - Google Indexing (double check)
 - check umami analytics not on my wifi (double check)
 - update favicon
