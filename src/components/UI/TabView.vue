@@ -60,6 +60,7 @@ const activeTab = ref(props.initialTab || props.tabs[0]?.id);
 .tab-buttons {
   display: inline-flex;
   border-bottom: 2px solid var(--color-primary-200, #a7f3d0);
+  width: 100%;
 }
 
 .tab-button {
@@ -95,11 +96,44 @@ const activeTab = ref(props.initialTab || props.tabs[0]?.id);
 @media (max-width: 640px) {
   .tab-buttons {
     width: 100%;
+    flex-wrap: wrap;
   }
   
   .tab-button {
     flex: 1;
     text-align: center;
+    padding: 10px 8px;
+    font-size: 0.95rem;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* For very small screens, stack the tabs vertically */
+  @media (max-width: 380px) {
+    .tab-buttons {
+      flex-direction: column;
+      border-bottom: none;
+    }
+    
+    .tab-button {
+      border-bottom: 1px solid var(--color-primary-200, #a7f3d0);
+      text-align: left;
+      padding: 12px 16px;
+    }
+    
+    .tab-button:last-child {
+      border-bottom: 2px solid var(--color-primary-200, #a7f3d0);
+    }
+    
+    .tab-button.active::after {
+      width: 4px;
+      height: 100%;
+      top: 0;
+      left: 0;
+      bottom: auto;
+    }
   }
 }
 </style> 
