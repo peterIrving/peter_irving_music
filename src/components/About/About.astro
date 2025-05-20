@@ -6,6 +6,7 @@
 import { Image } from "astro:assets";
 
 import profileImage from "@assets/images/peter-headshot.jpeg";
+import banjoImage from "@assets/images/banjo_on_the_lake.jpg";
 ---
 
 <section id="about" class="site-container scroll-mt-10 py-8 md:py-12">
@@ -27,7 +28,7 @@ import profileImage from "@assets/images/peter-headshot.jpeg";
 		<div class="mr-auto max-w-md md:w-1/3 md:max-w-none">
 			<div class="my-auto aspect-[3/4] w-full overflow-hidden">
 				<Image
-					src={profileImage}
+					src={banjoImage}
 					alt="Peter Irving playing music"
 					width={450}
 					densities={[1.5, 2]}
