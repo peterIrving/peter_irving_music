@@ -40,17 +40,17 @@ const { startStyle = "default", rest } = Astro.props as Props;
 					<nav class="hidden md:block">
 						<ul
 							class="flex h-full items-center justify-center px-4 text-lg lg:gap-4"
-							style="text-shadow: 0 0 5px #ffffff61, 0 0 10px #ffffff2c;"
+							style="text-shadow: 0 0 10px rgba(255,255,255,0.9), 0 0 20px rgba(255,255,255,0.7), 0 0 30px rgba(255,255,255,0.5);"
 						>
 							{
 								// if dropdown exists, setup the dropdown, otherwise it is just a link
 								navData.map((navItem) =>
 									"dropdown" in navItem ? (
 										// non-mobile dropdown menu
-										<NavDropdown navItem={navItem} class="text-base-900" />
+										<NavDropdown navItem={navItem} class="text-base-900 hover:text-black" />
 									) : (
 										// normal nav link
-										<NavLink {navItem} class="h-10" />
+										<NavLink {navItem} class="h-10 transition-colors hover:text-black" />
 									),
 								)
 							}
@@ -58,11 +58,15 @@ const { startStyle = "default", rest } = Astro.props as Props;
 					</nav>
 					<Button
 						variant="secondary"
-						class=`nav__cta py-1 my-auto hidden md:block ${startStyle === "dark" ? "data-[scrolled=true]:border-primary-200 data-[scrolled=true]:hover:border-primary-200/80" : "border-primary-200"}`
+						class=`nav__cta py-1 my-auto hidden md:block hover:text-black ${startStyle === "dark" ? "data-[scrolled=true]:border-primary-200 data-[scrolled=true]:hover:border-primary-200/80" : "border-primary-200"}`
 						href="/contact"
 						data-scrolled="false"
 					>
-						<div style="text-shadow: 0 0 5px #ffffff61, 0 0 10px #ffffff2c;">Contact</div>
+						<div
+							style="text-shadow: 0 0 10px rgba(255,255,255,0.9), 0 0 20px rgba(255,255,255,0.7), 0 0 30px rgba(255,255,255,0.5);"
+						>
+							Contact
+						</div>
 					</Button>
 
 					<!-- mobile nav menu, only load on small screens where it is visible -->
