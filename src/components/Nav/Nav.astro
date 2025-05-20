@@ -71,7 +71,7 @@ const { startStyle = "default", rest } = Astro.props as Props;
 
 					<!-- mobile nav menu, only load on small screens where it is visible -->
 					<div class="md:hidden">
-						<MobileNav />
+						<MobileNav startStyle={startStyle} />
 					</div>
 				</div>
 			</header>
@@ -121,5 +121,16 @@ const { startStyle = "default", rest } = Astro.props as Props;
 		/* @apply bg-base-50 py-0; */
 		background-color: var(--color-base-50);
 		padding-block: 0;
+	}
+
+	/* Force hide with !important to override any other styles */
+	.!hidden {
+		display: none !important;
+	}
+
+	@media (min-width: 768px) {
+		.md\:!flex {
+			display: flex !important;
+		}
 	}
 </style>

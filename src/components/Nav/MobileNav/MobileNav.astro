@@ -10,7 +10,7 @@ import Button from "@components/Button/Button.astro";
 import navData from "@config/navData.json.ts";
 
 interface Props {
-	startStyle?: "default" | "white"; // if set to "white", the nav elements will be white until the page is scrolled down. Useful for background hero images.
+	startStyle?: "default" | "dark" | "white"; // if set to "white", the nav elements will be white until the page is scrolled down. Useful for background hero images.
 }
 
 const { startStyle = "default" } = Astro.props as Props;
