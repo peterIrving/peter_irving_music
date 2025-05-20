@@ -7,6 +7,7 @@ import { Image } from "astro:assets";
 
 import profileImage from "@assets/images/peter-headshot.jpeg";
 import banjoImage from "@assets/images/banjo_on_the_lake.jpg";
+import Button from "@components/Button/Button.astro";
 ---
 
 <section id="about" class="site-container scroll-mt-10 py-8 md:py-12">
@@ -16,12 +17,14 @@ import banjoImage from "@assets/images/banjo_on_the_lake.jpg";
 			<h3 class="h2 mt-4">Peter Irving</h3>
 			<div class="bg-base-100 mt-8 p-8 md:mb-20 lg:text-lg">
 				<p>
-					Milwaukee-based Peter started his musical path with hip-hop and funk before finding a
-					connection to American roots music in his mid-twenties. His performances blend elements of
-					country blues, old-time, and traditional country while maintaining a danceable quality
-					that engages audiences. As a multi-instrumentalist, Peter brings a contemporary
-					sensibility to traditional forms, creating music that respects the origins of these genres
-					while inviting people to move and participate.
+					With a deep interest in clever word play and syncopation, Peter explores various elements
+					of folk music. From pure dance rhythms to deep metaphors and story, expect to think, move
+					and maybe blow off a little steam.
+					<br />
+					<br />
+					<div class="colo justify-left flex p-2">
+						<Button href="/music" variant="primary" class="px-8">Listen</Button>
+					</div>
 				</p>
 			</div>
 		</div>
