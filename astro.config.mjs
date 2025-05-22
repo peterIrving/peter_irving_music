@@ -7,6 +7,7 @@ import sitemap from "@astrojs/sitemap";
 import compress from "@playform/compress";
 import AutoImport from "astro-auto-import";
 import vue from "@astrojs/vue";
+import umami from "@yeskunall/astro-umami";
 
 
 // https://astro.build/config
@@ -52,7 +53,11 @@ export default defineConfig({
 			Image: false, // astro:assets handles this. Enabling this can dramatically increase build times
 			SVG: false, // astro-icon handles this
 		}),
-
+		umami({
+			websiteId: "e0965b9b-2d3b-4d00-8339-04bf810d5024",
+			src: "https://cloud.umami.is/script.js",
+			domains: ["peterirving.live", "www.peterirving.live"],
+		}),
 	],
 	vite: {
 		plugins: [tailwindcss()],
