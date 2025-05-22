@@ -45,6 +45,35 @@ const {
 			data-website-id="e0965b9b-2d3b-4d00-8339-04bf810d5024"
 			data-auto-track="true"
 			data-domains="peterirving.live,www.peterirving.live"></script>
+
+		<script>
+			// Modified debug script that doesn't rely on window.umami
+			document.addEventListener("DOMContentLoaded", () => {
+				// Check if the script loaded
+				const umamiScript = document.querySelector(
+					'script[src="https://cloud.umami.is/script.js"]',
+				);
+				if (umamiScript) {
+					console.log("Umami script tag is present in the DOM");
+				} else {
+					console.warn("Umami script tag is not found in the DOM");
+				}
+
+				// Create and send a manual pageview event
+				const trackingPixel = document.createElement("img");
+				const websiteId = "e0965b9b-2d3b-4d00-8339-04bf810d5024";
+				const currentUrl = encodeURIComponent(window.location.href);
+				const referrer = encodeURIComponent(document.referrer || "");
+				const screenWidth = window.innerWidth;
+				const screenHeight = window.innerHeight;
+
+				trackingPixel.src = `https://cloud.umami.is/api/collect?website=${websiteId}&url=${currentUrl}&referrer=${referrer}&screen=${screenWidth}x${screenHeight}`;
+				trackingPixel.style.display = "none";
+				document.body.appendChild(trackingPixel);
+
+				console.log("Manual tracking pixel sent to Umami");
+			});
+		</script>
 	</head>
 	<body id="body" class="bg-base-50 text-base-900">
 		<div class="min-h-[100lvh]">
