@@ -13,7 +13,7 @@ import netlify from '@astrojs/netlify';
 export default defineConfig({
 	site: "https://www.peterirving.live",
 	output: "server",
-	adapter: netlify(),
+	adapter: netlify({ edge: false }),
 	base: "/",
 	integrations: [// example auto import component into blog post mdx files
 		AutoImport({
