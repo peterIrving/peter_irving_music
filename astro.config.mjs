@@ -13,6 +13,7 @@ import umami from "@yeskunall/astro-umami";
 // https://astro.build/config
 export default defineConfig({
 	site: "https://www.peterirving.live",
+	output: "server",
 	base: "/",
 	integrations: [// example auto import component into blog post mdx files
 		AutoImport({
@@ -57,5 +58,6 @@ export default defineConfig({
 		build: {
 			assetsInlineLimit: 0,
 		},
+		envPrefix: "BREVO_",
 	},
 });

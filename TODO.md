@@ -3,7 +3,6 @@
 - make copy way less cringy
 - add errror image to performance card <img > tag
 - new pics website
-- Google Indexing (double check)
 - check umami analytics not on my wifi (double check)
 - update favicon
 

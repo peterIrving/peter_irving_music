@@ -10,7 +10,7 @@ import About from "@components/About/About.astro";
 import siteData from "@config/siteData.json";
 import PerformanceListHome from "@components/Performances/UI/PerformanceListHome.astro";
 import ContactComponent from "@components/Contact/ContactComponent.astro";
-import EmailListSignup from "@components/Contact/EmailListSignup.astro";
+import BrevoEmailSignup from "@components/Contact/BrevoEmailSignup.vue";
 ---
 
 <BaseLayout title={siteData.title} description={siteData.description} navStartStyle="dark">
@@ -20,6 +20,6 @@ import EmailListSignup from "@components/Contact/EmailListSignup.astro";
 	<PricingThreeCards /> -->
 	<About />
 	<PerformanceListHome />
-	<!-- <EmailListSignup /> -->
+	<BrevoEmailSignup client:load />
 	<ContactComponent />
 </BaseLayout>
