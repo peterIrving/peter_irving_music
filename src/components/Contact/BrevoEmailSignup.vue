@@ -5,7 +5,9 @@
         Join My Mailing List
       </h3>
       <p class="description mb-6 text-center text-lg">
-        Stay updated with my latest performances, music releases, and exclusive content.
+        Stay updated with my latest performances, music releases, and occassional snark.
+        How much better would the world be if we all got monthly updates from our social
+        circle instead of a constant feed of noise?
       </p>
       <form class="mx-auto max-w-md">
         <div class="mb-4 flex flex-col gap-4 sm:flex-row">
