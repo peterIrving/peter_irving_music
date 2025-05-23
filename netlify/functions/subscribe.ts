@@ -1,5 +1,4 @@
 // src/pages/api/subscribe.ts
-import type { APIRoute } from 'astro'
 
 export const handler = async (event, context) => {
     // Basic API key check
