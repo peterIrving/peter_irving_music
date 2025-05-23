@@ -36,6 +36,7 @@
 		"prettier-plugin-tailwindcss": "^0.6.11"
 	},
 	"overrides": {
-		"sharp": "^0.33.0"
+		"sharp": "^0.33.0",
+		"entities": "2.2.0"
 	}
 }
