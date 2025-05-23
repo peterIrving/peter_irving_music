@@ -12,6 +12,7 @@
 	},
 	"dependencies": {
 		"@astrojs/mdx": "^4.0.8",
+		"@astrojs/netlify": "^6.3.4",
 		"@astrojs/rss": "^4.0.11",
 		"@astrojs/sitemap": "^3.2.1",
 		"@astrojs/vue": "^5.0.13",
@@ -36,7 +37,6 @@
 		"prettier-plugin-tailwindcss": "^0.6.11"
 	},
 	"overrides": {
-		"sharp": "^0.33.0",
-		"entities": "2.2.0"
+		"sharp": "^0.33.0"
 	}
 }

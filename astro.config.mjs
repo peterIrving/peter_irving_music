@@ -8,12 +8,12 @@ import compress from "@playform/compress";
 import AutoImport from "astro-auto-import";
 import vue from "@astrojs/vue";
 import umami from "@yeskunall/astro-umami";
-
-
+import netlify from '@astrojs/netlify';
 // https://astro.build/config
 export default defineConfig({
 	site: "https://www.peterirving.live",
 	output: "server",
+	adapter: netlify(),
 	base: "/",
 	integrations: [// example auto import component into blog post mdx files
 		AutoImport({
